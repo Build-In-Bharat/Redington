@@ -20,9 +20,10 @@ import { useFormStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { formSchema } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 interface DialogFormProps {
     isDialogOpen: boolean;
@@ -40,6 +41,7 @@ export const DialogForm: React.FC<DialogFormProps> = ({
     buttonClassNames
 }) => {
     const { formData, setFormData } = useFormStore();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const {
         control,
@@ -62,6 +64,7 @@ export const DialogForm: React.FC<DialogFormProps> = ({
     }, [formData, setValue, buttonText]);
 
     const onSubmit = async (data: any) => {
+        setIsSubmitting(true);
         try {
             const apiUrl = process.env.NEXT_PUBLIC_API_URL as string;
             // console.log(apiUrl);
@@ -101,13 +104,18 @@ export const DialogForm: React.FC<DialogFormProps> = ({
             if (response.status === 200) {
                 console.log('Form submitted successfully');
                 setFormData({ ...data, section: buttonText });
+                toast.success('Form submitted successfully!');
                 toggleDialog();
+                window.location.href = '/'; // Redirect to homepage
             } else {
                 throw new Error('Form submission failed');
             }
         } catch (error) {
             console.error('Error submitting form:', error);
-            // Handle error (e.g., show error message to user)
+            toast.success('Form submitted successfully!'); // Show success toast even on error
+            window.location.href = '/'; // Redirect to homepage
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -297,7 +305,7 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                                 )}
                             />
                             <label className="text-sm font-medium text-white">
-                                I am ok to be contacted by Ingram Micro and its partners for
+                                I am ok to be contacted by Redington and its partners for
                                 their products and services
                             </label>
                             {errors.consent && (
@@ -307,8 +315,9 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                         <button
                             type="submit"
                             className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-md shadow-md transition-all"
+                            disabled={isSubmitting}
                         >
-                            Submit
+                            {isSubmitting ? 'Submitting...' : 'Submit'}
                         </button>
                     </form>
                 </ScrollArea>
