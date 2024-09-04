@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    /* Ensure no default margin */
+    padding: 0;
+    /* Ensure no default padding */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Segoe UI", sans-serif;
+    overflow: auto;
+    /* Allow scrolling */
+  }
+
+ /* WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2b2b2b; /* Dark background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5a5a5a; /* Dark grey color for the scrollbar thumb */
+  border-radius: 10px;
+  border: 2px solid #2b2b2b; /* Gives a little space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4a4a4a; /* Slightly lighter grey when hovered */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #5a5a5a #2b2b2b; /* Thumb color and track color */
+}
+
+}
+
+nav {
+  background-color: transparent !important;
+}
