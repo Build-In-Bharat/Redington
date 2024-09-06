@@ -11,7 +11,7 @@ const Last: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-screen flex items-center overflow-hidden container mx-auto min-w-full bg-black">
+    <div className="relative w-full md:h-screen flex items-center overflow-hidden container mx-auto min-w-full bg-black">
       <Image
         src="/last_comp.png"
         alt="Background with Laptop"
@@ -28,6 +28,7 @@ const Last: React.FC = () => {
           toggleDialog={toggleDialog}
           buttonText="Download Case Study"
           dialogTitle="Download Case Study"
+          buttonClassNames="hidden md:flex"
         />
       </div>
     </div>
