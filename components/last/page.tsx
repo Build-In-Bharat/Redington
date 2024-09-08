@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { DialogForm } from "../DialogForm";
+import { DialogForm } from "../EarlyAccess";
 
 const Last: React.FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -26,8 +26,8 @@ const Last: React.FC = () => {
         <DialogForm
           isDialogOpen={isDialogOpen}
           toggleDialog={toggleDialog}
-          buttonText="Download Case Study"
-          dialogTitle="Download Case Study"
+          buttonText="Get Early Access"
+          dialogTitle="Get Early Access"
           buttonClassNames="hidden md:flex"
         />
       </div>

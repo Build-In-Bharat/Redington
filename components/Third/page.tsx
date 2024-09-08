@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { DialogForm } from "../DialogForm";
+import { DialogForm } from "../EarlyAccess";
 
 const Third: React.FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -16,7 +16,7 @@ const Third: React.FC = () => {
       <div className="max-w-screen md:mx-auto flex flex-col">
         <div className="mb-8 w-70 text-justify px-3 md:px-24 pb-5 md:pb-10 ">
           <div className="text-[#50aed8] font-bold text-xl md:text-3xl lg:text-4xl mb-2 md:mb-4 flex flex-col gap-1 md:gap-3">
-            <span>
+            <span className="leading-tight">
               "We&apos;re able to do a lot of things much faster, much more
               efficiently. Windows 11 Pro made my whole team very effective."
             </span>{" "}
@@ -33,11 +33,11 @@ const Third: React.FC = () => {
         </div>
 
         <div className="bg-gradient-to-b from-[#010b1a] to-[#06183E] flex md:gap-x-12 items-center">
-          <div className="w-1/2 md:w-fit">
+          <div className="w-1/2 h-full md:w-fit">
             <Image
               src="/Third_comp.svg"
               alt="Windows 11 Pro laptop"
-              className="w-full md:w-[30vw]  "
+              className="w-full h-[100%] md:w-[30vw]  "
               width={300}
               height={150}
             />
@@ -52,12 +52,12 @@ const Third: React.FC = () => {
                 width={40}
                 height={35}
               />
-              <span className="text-xs sm:text-lg md:text-xl lg:text-2xl font-semibold">Copilot + PC</span>
+              <span className="text-[16px] sm:text-lg md:text-xl lg:text-2xl font-bold md:font-semibold">Copilot + PC</span>
             </div>
 
             <div className="w-full pr-1">
-              <h2 className="w-full text-lg sm:text-4xl md:text-5xl my-1 sm:my-6 md:my-8 font-bold">A new AI era at work</h2>
-              <p className="w-full text-xs sm:text-base md:text-lg mb-4 leading-relaxed">
+              <h2 className="w-full text-[16px] sm:text-4xl md:text-5xl my-1 sm:my-6 md:my-8 md:font-bold">A new AI era at work</h2>
+              <p className="w-full text-[12px] sm:text-base md:text-lg mb-4 leading-relaxed">
                 Introducing the world's fastest, most intelligent
                 Windows PCs ever. Accelerate innovation, solve
                 problems faster, and drive transformative business
@@ -66,8 +66,8 @@ const Third: React.FC = () => {
               <DialogForm
                 isDialogOpen={isDialogOpen}
                 toggleDialog={toggleDialog}
-                buttonText="Download e-book"
-                dialogTitle="Download e-book"
+                buttonText="Get Early Access"
+                dialogTitle="Get Early Access"
                 buttonClassNames="hidden md:block px-3 py-1 mt-4 sm:mt-6 w-full sm:w-auto"
               />
             </div>

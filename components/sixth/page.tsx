@@ -3,22 +3,22 @@ import React, { useState } from "react";
 import { DialogForm } from "../DialogForm";
 
 const cardsData = [
-  {                                                                            
-    imageSrc: "/Laptop1.webp",
-    title: "Latitude 7455 Laptop",
-    description: "Acer VT AIO Intel Core i3 12th Gen (Windows 11 Home/8 GB/512 GB) Z4694G (D22W1) 60.5cm (23.8) Display with Wireless Mouse and Keyboard",
+  {
+    imageSrc: "/l1.webp",
+    title: "Acer VT AIO Laptop",
+    description: "Acer VT AIO Intel Core i3 12th Gen (Windows 11 Home/8 GB/512 GB) Z4694G (D22W1) 60.5cm (23.8 Inch)Display with Wireless Mouse and Keyboard.",
     buttonText: "Send Enquiry",
   },
   {
-    imageSrc: "/Laptop2.webp",
-    title: "Dell Latitude 5440 Laptop",
-    description: "Acer TravelMate TMP414-51 11th Gen Intel Core i5 (Windows 11 Home/16 GB/512 GB SSD) 35.56 cm (14 Inch) Full HD Display Laptop, Fingerprint Reader, Backlit Keyboard",
+    imageSrc: "/l2.webp",
+    title: "Acer TravelMate Laptop",
+    description: "Acer TravelMate TMP414-51 11th Gen Intel Core i5 (Windows 11 Home/16 GB/512 GB SSD) 35.56 cm (14 Inch) Full HD Display Laptop...",
     buttonText: "Send Enquiry",
   },
   {
-    imageSrc: "/Laptop3.webp",
-    title: "Dell Latitude 5440 Laptop",
-    description: "Acer TravelLite Business Laptop 13th Gen Intel Core i5-1335U Processor (Windows 11 Home/16 GB RAM/512 GB SSD) TL14-52M with 35.5 cm (14) Full HD Display, Backlit Keyboard, Fingerprint Reader, 1.34 KG",
+    imageSrc: "/l3.webp",
+    title: "Acer TravelLite Business Laptop",
+    description: "Acer TravelLite Business Laptop 13th Gen Intel Core i5-1335U Processor (Windows 11 Home/16 GB RAM/512 GB SSD) TL14-52M with 35.5 cm (14 Inch) Full HD Display...",
     buttonText: "Send Enquiry",
   },
 ];
