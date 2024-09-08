@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { DialogForm } from "../DialogForm";
 
 const cardsData = [
-  {
+  {                                                                            
     imageSrc: "/Laptop1.webp",
     title: "Latitude 7455 Laptop",
     description: "Acer VT AIO Intel Core i3 12th Gen (Windows 11 Home/8 GB/512 GB) Z4694G (D22W1) 60.5cm (23.8) Display with Wireless Mouse and Keyboard",
