@@ -33,19 +33,19 @@ const Fourth: React.FC = () => {
       subtitle: "Introducing the world's fastest, most intelligent Windows PCs ever. Accelerate innovation, solve problems faster, and drive transformative business impact with Copilot+ PCs."
     },
     {
-      imageSrc: "/1.png",
+      imageSrc: "/3.png",
       videoUrl: "https://www.youtube.com/watch?v=Xfsv_c0vJvM",
       title: "Recall almost anything anywhere",
       subtitle: "Use recall to search across your personal timeline, apps, documents, and communications to find and predict the most relevant content. With just a few words, describe it to find it using natural language options."
     },
     {
-      imageSrc: "/2.png",
+      imageSrc: "/1.png",
       videoUrl: "https://www.youtube.com/watch?v=a3bEOqiv3yU",
       title: "Keep communication flowing effortlessly",
       subtitle: "Using live captions with translation,2 you can understand almost any video call or recording with real-time translation from 40+ languages into English."
     },
     {
-      imageSrc: "/3.png",
+      imageSrc: "/2.png",
       videoUrl: "https://www.youtube.com/watch?v=zVv_mJoSh_g",
       title: "Put AI to work for you",
       subtitle: "Experience superb-quality video calls in any app. Windows Studio Effects dynamically responds to you and your environment to automatically adjust your lighting, filter background noise and movement, keep you in the frame, and more."
@@ -91,8 +91,8 @@ const Fourth: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-8 sm:gap-16 w-full sm:w-[90vw] md:w-[80vw] mx-auto">
           <div className="mt-5">
-            <div className="text-[32px] font-bold leading-[39px]">How Copilot+ PCs help your business</div>
-            <div className="text-[14px] leading-[17px] my-4">Accelerate success with a turbocharged NPU for an unmatched experience with lightning speed and smooth performance. Copilot+ PCs bring intelligent edge computing to your desktop experience.</div>
+            <div className="text-[32px] font-bold leading-[39px] text-center">How Copilot+ PCs help your business</div>
+            <div className="text-[14px] leading-[17px] my-4 text-center">Accelerate success with a turbocharged NPU for an unmatched experience with lightning speed and smooth performance. Copilot+ PCs bring intelligent edge computing to your desktop experience.</div>
           </div>
           {/* Main video */}
           <div className="w-full">

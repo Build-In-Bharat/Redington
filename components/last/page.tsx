@@ -11,25 +11,36 @@ const Last: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full md:h-screen flex items-center overflow-hidden container mx-auto min-w-full bg-black">
-      <Image
-        src="/last_comp.png"
-        alt="Background with Laptop"
-        layout="fill"
-        objectFit="cover"
-        priority
-        className="z-0"
-      />
-
-      <div className="z-10 mt-48 ml-20 text-white">
-
-        <DialogForm
-          isDialogOpen={isDialogOpen}
-          toggleDialog={toggleDialog}
-          buttonText="Get Early Access"
-          dialogTitle="Get Early Access"
-          buttonClassNames="hidden md:flex"
+    <div className="bg-black ">
+      <div className="relative w-full md:h-screen flex items-center overflow-hidden container mx-auto min-w-full bg-[#0a1929]">
+        <Image
+          src="/last_comp.png"
+          alt="Background with Laptop"
+          layout="fill"
+          objectFit="cover"
+          priority
+          className="z-0"
         />
+        <div className="z-10 mt-48 ml-20 text-white">
+          <DialogForm
+            isDialogOpen={isDialogOpen}
+            toggleDialog={toggleDialog}
+            buttonText="Get Early Access"
+            dialogTitle="Get Early Access"
+            buttonClassNames="hidden md:flex"
+          />
+      
+        </div>
+        
+      </div>
+      <div className="flex ">
+        <DialogForm
+              isDialogOpen={isDialogOpen}
+              toggleDialog={toggleDialog}
+              buttonText="Get Early Access"
+              dialogTitle="Get Early Access"
+              buttonClassNames="flex md:hidden mx-auto mt-6 mb-10"
+            />
       </div>
     </div>
   );

@@ -21,10 +21,12 @@ interface DialogFormProps {
     buttonText: string;
     dialogTitle: string;
     buttonClassNames?: string;
+    section?: string;
 }
 
 const formSchema = z.object({
-    email: z.string().email("Invalid email address"),
+    business_email: z.string().email("Invalid email address"),
+    section: z.string(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -34,9 +36,11 @@ export const DialogForm: React.FC<DialogFormProps> = ({
     toggleDialog,
     buttonText,
     dialogTitle,
-    buttonClassNames
+    buttonClassNames,
+    section = "get-early-access"
 }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submissionMessage, setSubmissionMessage] = useState<string | null>(null);
 
     const {
         register,
@@ -44,6 +48,9 @@ export const DialogForm: React.FC<DialogFormProps> = ({
         formState: { errors },
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
+        defaultValues: {
+            section: section
+        }
     });
 
     const onSubmit: SubmitHandler<FormValues> = async (data) => {
@@ -55,16 +62,16 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                 throw new Error('API URL is not defined');
             }
 
-            const formattedData = {
-                business_email: data.email,
-            };
-
-            const response = await axios.post(`${apiUrl}/submit-form/`, formattedData);
+            const response = await axios.post(`${apiUrl}/submit-form/`, data);
 
             if (response.status === 200) {
                 console.log('Form submitted successfully');
-                toast.success('Form submitted successfully!');
-                toggleDialog();
+                if (section === "download-guide") {
+                    setSubmissionMessage(`Guide will be sent to ${data.business_email}`);
+                } else {
+                    toast.success('Thank you for sharing your details. The guide will be shared on the email address provided.');
+                    toggleDialog();
+                }
             } else {
                 throw new Error('Form submission failed');
             }
@@ -87,28 +94,38 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                 <DialogHeader>
                     <DialogTitle>{dialogTitle}</DialogTitle>
                 </DialogHeader>
-                <form className="p-4" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-4">
-                        <label className="block text-sm font-medium text-white">
-                            Business Email
-                        </label>
-                        <Input
-                            type="email"
-                            {...register("email")}
-                            className="mt-1 block w-full px-3 py-2 border border-gray-700 bg-[#010B1A] text-white rounded-xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        />
-                        {errors.email && (
-                            <p className="text-red-500">{String(errors.email.message)}</p>
-                        )}
+                {submissionMessage ? (
+                    <div className="p-4 text-center">
+                        <p>{submissionMessage}</p>
+                        <Button onClick={toggleDialog} className="mt-4 bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-md shadow-md transition-all">
+                            Close
+                        </Button>
                     </div>
-                    <button
-                        type="submit"
-                        className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-md shadow-md transition-all"
-                        disabled={isSubmitting}
-                    >
-                        {isSubmitting ? 'Submitting...' : 'Submit'}
-                    </button>
-                </form>
+                ) : (
+                    <form className="p-4" onSubmit={handleSubmit(onSubmit)}>
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-white">
+                                Business Email
+                            </label>
+                            <Input
+                                type="email"
+                                {...register("business_email")}
+                                className="mt-1 block w-full px-3 py-2 border border-gray-700 bg-[#010B1A] text-white rounded-xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            />
+                            {errors.business_email && (
+                                <p className="text-red-500">{String(errors.business_email.message)}</p>
+                            )}
+                        </div>
+                        <input type="hidden" {...register("section")} value={section} />
+                        <button
+                            type="submit"
+                            className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-md shadow-md transition-all"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? 'Submitting...' : 'Submit'}
+                        </button>
+                    </form>
+                )}
             </DialogContent>
         </Dialog>
     );

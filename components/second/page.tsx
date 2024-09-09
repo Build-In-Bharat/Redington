@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
-import { DialogForm } from "../DialogForm"; // Import the new DialogForm component
+import { DialogForm } from "../EarlyAccess"; // Import the new DialogForm component
 
 const Second: React.FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -34,6 +34,7 @@ const Second: React.FC = () => {
               buttonText="Download Guide"
               dialogTitle="Download Guide"
               buttonClassNames="lg:px-6 lg:py-7"
+              section="download-guide"
             />
           </div>
         </div>

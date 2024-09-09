@@ -1,26 +1,25 @@
 "use client";
 import React, { useState } from "react";
 import { DialogForm } from "../DialogForm";
-import useEmblaCarousel from 'embla-carousel-react';
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const cardsData = [
   {
-    imageSrc: "/Laptop1.avif",
-    title: "Latitude 7455 Laptop",
-    description: "Latitude's first Copilot+ PC powered by Snapdragon® X Series ushers in a new era of AI with game-changing performance and outstanding battery life",
+    imageSrc: "/l1.webp",
+    title: "Acer VT AIO Laptop",
+    description: "Acer VT AIO Intel Core i3 12th Gen (Windows 11 Home/8 GB/512 GB) Z4694G (D22W1) 60.5cm (23.8 Inch)Display with Wireless Mouse and Keyboard.",
     buttonText: "Send Enquiry",
   },
   {
-    imageSrc: "/Laptop2.avif",
-    title: "Dell Latitude 5440 Laptop",
-    description: "Latitude's first Copilot+ PC powered by Snapdragon® X Series ushers in a new era of AI with game-changing performance and outstanding battery life",
+    imageSrc: "/l2.webp",
+    title: "Acer TravelMate Laptop",
+    description: "Acer TravelMate TMP414-51 11th Gen Intel Core i5 (Windows 11 Home/16 GB/512 GB SSD) 35.56 cm (14 Inch) Full HD Display Laptop...",
     buttonText: "Send Enquiry",
   },
   {
-    imageSrc: "/Laptop2.avif",
-    title: "Dell Latitude 5440 Laptop",
-    description: "Latitude's first Copilot+ PC powered by Snapdragon® X Series ushers in a new era of AI with game-changing performance and outstanding battery life",
+    imageSrc: "/l3.webp",
+    title: "Acer TravelLite Business Laptop",
+    description: "Acer TravelLite Business Laptop 13th Gen Intel Core i5-1335U Processor (Windows 11 Home/16 GB RAM/512 GB SSD) TL14-52M with 35.5 cm (14 Inch) Full HD Display...",
     buttonText: "Send Enquiry",
   },
 ];
@@ -28,13 +27,6 @@ const cardsData = [
 const Sixth: React.FC = () => {
   const [dialogStates, setDialogStates] = useState(cardsData.map(() => false));
   const isMobile = useMediaQuery("(max-width: 640px)");
-  const [emblaRef] = useEmblaCarousel({
-    loop: true,
-    align: 'center',
-    containScroll: false,
-    dragFree: true,
-    slidesToScroll: 1
-  });
 
   const toggleDialog = (index: number) => {
     setDialogStates(prevStates =>
@@ -74,14 +66,12 @@ const Sixth: React.FC = () => {
 
         {isMobile ? (
           <div className="w-full overflow-hidden">
-            <div className="embla" ref={emblaRef}>
-              <div className="embla__container flex -mx-2">
-                {cardsData.map((card, index) => (
-                  <div key={index} className="embla__slide flex-[0_0_80%] px-2">
-                    {renderCard(card, index)}
-                  </div>
-                ))}
-              </div>
+            <div className="flex -mx-2 overflow-x-auto">
+              {cardsData.map((card, index) => (
+                <div key={index} className="flex-[0_0_80%] px-2">
+                  {renderCard(card, index)}
+                </div>
+              ))}
             </div>
           </div>
         ) : (
