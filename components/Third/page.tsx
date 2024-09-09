@@ -48,7 +48,7 @@ const Third: React.FC = () => {
               <Image
                 src="/copilot.svg"
                 alt="Copilot logo"
-                className="mr-4 h-[100%] w-5"
+                className="mr-4 h-[100%] w-5 "
                 width={40}
                 height={35}
               />
@@ -68,7 +68,7 @@ const Third: React.FC = () => {
                 toggleDialog={toggleDialog}
                 buttonText="Get Early Access"
                 dialogTitle="Get Early Access"
-                buttonClassNames="hidden md:block px-3 py-1 mt-4 sm:mt-6 w-full sm:w-auto"
+                buttonClassNames="block mb-2 px-[32px] py-[3px] font-bold md:px-3 md:py-1 mt-4 sm:mt-6 w-fit text-[14px] sm:text-lg sm:w-auto"
               />
             </div>
           </div>
