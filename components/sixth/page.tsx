@@ -10,6 +10,7 @@ const cardsData = [
     description:
       "Acer VT AIO Intel Core i3 12th Gen (Windows 11 Home/8 GB/512 GB) Z4694G (D22W1) 60.5cm (23.8 Inch)Display with Wireless Mouse and Keyboard.",
     buttonText: "Send Enquiry",
+    formSection: "send-enquiry-Acer-VT-AIO-Laptop",
   },
   {
     imageSrc: "/l2.jpg",
@@ -17,6 +18,7 @@ const cardsData = [
     description:
       "Acer TravelMate TMP414-51 11th Gen Intel Core i5 (Windows 11 Home/16 GB/512 GB SSD) 35.56 cm (14 Inch) Full HD Display Laptop...",
     buttonText: "Send Enquiry",
+    formSection: "send-enquiry-Acer-TravelMate-Laptop",
   },
   {
     imageSrc: "/l3.webp",
@@ -24,6 +26,7 @@ const cardsData = [
     description:
       "Acer TravelLite Business Laptop 13th Gen Intel Core i5-1335U Processor (Windows 11 Home/16 GB RAM/512 GB SSD) TL14-52M with 35.5 cm (14 Inch) Full HD Display...",
     buttonText: "Send Enquiry",
+    formSection: "send-enquiry-Acer-TravelLite-Business-Laptop",
   },
 ];
 
@@ -56,7 +59,7 @@ const Sixth: React.FC = () => {
         buttonText={card.buttonText}
         dialogTitle="Send Enquiry"
         buttonClassNames="w-full py-2 px-3 text-xs sm:text-sm md:text-base"
-        section="send-enquiry"
+        section={card.formSection}
       />
     </div>
   );
