@@ -67,7 +67,6 @@ export const DialogForm: React.FC<DialogFormProps> = ({
         setIsSubmitting(true);
         try {
             const apiUrl = process.env.NEXT_PUBLIC_API_URL as string;
-            // console.log(apiUrl);
 
             if (!apiUrl) {
                 throw new Error('API URL is not defined');
@@ -101,19 +100,24 @@ export const DialogForm: React.FC<DialogFormProps> = ({
 
             const response = await axios.post(`${apiUrl}/submit-form/`, formattedData);
 
-            if (response.status === 200) {
-                console.log('Form submitted successfully');
-                setFormData({ ...data, section: buttonText });
-                toast.success('Form submitted successfully!');
-                toggleDialog();
-                window.location.href = '/'; // Redirect to homepage
-            } else {
+            // Check if the response status is not 2xx
+            if (response.status < 200 || response.status >= 300) {
                 throw new Error('Form submission failed');
             }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            toast.success('Form submitted successfully!'); // Show success toast even on error
+
+            console.log('Form submitted successfully');
+            setFormData({ ...data, section: buttonText });
+            toast.success('Form submitted successfully!');
+            toggleDialog();
             window.location.href = '/'; // Redirect to homepage
+        } catch (error) {
+            // Log the error response if available
+            if (axios.isAxiosError(error) && error.response) {
+                console.error('Error submitting form:', error.response.data);
+            } else {
+                console.error('Error submitting form:', error);
+            }
+            toast.error('Form submission failed. Please try again.'); // Show error toast
         } finally {
             setIsSubmitting(false);
         }
@@ -121,6 +125,11 @@ export const DialogForm: React.FC<DialogFormProps> = ({
 
     const handleInputChange = (field: string, value: any) => {
         setFormData({ ...formData, [field]: value });
+    };
+
+    const validateBusinessEmail = (email: string) => {
+        const businessEmailRegex = /^[a-zA-Z0-9._%+-]+@(?!gmail\.com)(?!yahoo\.com)(?!hotmail\.com)(?!.*\.com)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
+        return businessEmailRegex.test(email) || "Please enter a valid business email address";
     };
 
     return (
@@ -181,7 +190,9 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                             </label>
                             <Input
                                 type="email"
-                                {...register("email")}
+                                {...register("email", { 
+                                    validate: validateBusinessEmail 
+                                })}
                                 value={formData.email}
                                 onChange={(e) => handleInputChange("email", e.target.value)}
                                 className="mt-1 block w-full px-3 py-2 border border-gray-700 bg-[#010B1A] text-white rounded-xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -304,7 +315,7 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                                     />
                                 )}
                             />
-                            <label className="text-sm font-medium text-white">
+                            <label className="text-sm font-medium text-white ">
                                 I am ok to be contacted by Redington and its partners for
                                 their products and services
                             </label>

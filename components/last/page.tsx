@@ -40,6 +40,7 @@ const Last: React.FC = () => {
               buttonText="Get Early Access"
               dialogTitle="Get Early Access"
               buttonClassNames="flex md:hidden mx-auto mt-6 mb-10"
+              section="last-section"
             />
       </div>
     </div>

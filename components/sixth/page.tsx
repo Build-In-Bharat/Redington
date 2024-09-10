@@ -11,7 +11,7 @@ const cardsData = [
     buttonText: "Send Enquiry",
   },
   {
-    imageSrc: "/l2.webp",
+    imageSrc: "/l2.jpg",
     title: "Acer TravelMate Laptop",
     description: "Acer TravelMate TMP414-51 11th Gen Intel Core i5 (Windows 11 Home/16 GB/512 GB SSD) 35.56 cm (14 Inch) Full HD Display Laptop...",
     buttonText: "Send Enquiry",

@@ -62,21 +62,28 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                 throw new Error('API URL is not defined');
             }
 
-            const response = await axios.post(`${apiUrl}/submit-form/`, data);
+            const response = await axios.post(`${apiUrl}/`, data);
+            
+            // Log the entire response data for debugging
+            console.log('API Response:', response.data);
 
-            if (response.status === 200) {
+            if (response.status === 200 || 201 ) { // Check for success in response data
                 console.log('Form submitted successfully');
                 if (section === "download-guide") {
                     setSubmissionMessage(`Guide will be sent to ${data.business_email}`);
                 } else {
-                    toast.success('Thank you for sharing your details. The guide will be shared on the email address provided.');
+                    toast.success('Thank you for sharing your details.');
                     toggleDialog();
                 }
             } else {
-                throw new Error('Form submission failed');
+                throw new Error('Form submission failed'); // This will trigger if response.data.success is false
             }
         } catch (error) {
-            console.error('Error submitting form:', error);
+            if (axios.isAxiosError(error) && error.response) {
+                console.error('Error submitting form:', error.response.data);
+            } else {
+                console.error('Error submitting form:', error);
+            }
             toast.error('An error occurred. Please try again.');
         } finally {
             setIsSubmitting(false);

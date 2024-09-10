@@ -45,6 +45,7 @@ const Fifth: React.FC = () => {
               buttonText="Get Early Access"
               dialogTitle="Get Early Access"
               buttonClassNames="py-4 px-4 md:py-5 md:px-5 lg:py-7 lg:px-6 mx-auto md:mx-0"
+              section="work-magic-section"
             />
           </div>
         </div>
