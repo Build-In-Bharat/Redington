@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
-import { DialogForm } from "../EarlyAccess"; // Import the new DialogForm component
+import { DialogForm } from "../DialogForm"; // Import the new DialogForm component
 
 const Second: React.FC = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);

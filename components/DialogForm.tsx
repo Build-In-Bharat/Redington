@@ -31,6 +31,7 @@ interface DialogFormProps {
     buttonText: string;
     dialogTitle: string;
     buttonClassNames?: string;
+    section: string; // Added section prop
 }
 
 export const DialogForm: React.FC<DialogFormProps> = ({
@@ -38,7 +39,8 @@ export const DialogForm: React.FC<DialogFormProps> = ({
     toggleDialog,
     buttonText,
     dialogTitle,
-    buttonClassNames
+    buttonClassNames,
+    section // Added section to destructured props
 }) => {
     const { formData, setFormData } = useFormStore();
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -95,7 +97,7 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                 size_of_organization: organizationSizeMap[data.organizationSize],
                 upgrade_plan: upgradePlanMap[data.upgradePlan],
                 consent_to_contact: data.consent,
-                section: buttonText
+                section: section // Use the section prop here
             };
 
             const response = await axios.post(`${apiUrl}/submit-form/`, formattedData);

@@ -57,6 +57,7 @@ export default function HeroSection() {
                 buttonText="Contact Us"
                 dialogTitle="Contact Us"
                 buttonClassNames="px-6 py-6 mx-auto md:mx-0"
+                section="contact-us"
               />
             </div>
           </div>

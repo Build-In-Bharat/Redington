@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             />
           </a>
           <a href="https://www.instagram.com/windows11forsmbs.redington/" className="flex-shrink-0">
-            <img src="/X.svg" alt="Twitter" className="h-8 w-8 md:h-10 md:w-10" />
+            <img src="/Instagram.svg" alt="Instagram" className="h-8 w-8 md:h-10 md:w-10" />
           </a>
           <a href="https://www.linkedin.com/company/windows-11-for-smbs-by-redington-limited/" className="flex-shrink-0">
             <img src="/linkedin.svg" alt="LinkedIn" className="h-8 w-8 md:h-10 md:w-10" />
