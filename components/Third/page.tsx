@@ -65,7 +65,7 @@ const Third: React.FC = () => {
                   toggleDialog={toggleDialog}
                   buttonText="Get Early Access"
                   dialogTitle="Get Early Access"
-                  buttonClassNames="mx-auto md:mx-0 block mb-2 px-[32px] py-[3px] font-bold md:px-3 md:py-1 mt-4 sm:mt-6 w-fit text-[14px] sm:text-lg sm:w-auto"
+                  buttonClassNames="mx-auto md:mx-0 block mb-8 px-[32px] py-[3px] font-bold md:px-3 md:py-1 mt-4 sm:mt-6 w-fit text-[14px] sm:text-lg sm:w-auto"
                   section="AI-section"
                 />
               </div>
