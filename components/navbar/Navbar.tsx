@@ -99,11 +99,11 @@ const Navbar: React.FC = () => {
           </Drawer>
         </div>
         <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} className="hidden md:flex text-white justify-center items-center gap-8 py-3">
-          <Link href="#" className="hover:text-[#00FFFF] cursor-pointer">Windows 10 End of Support</Link>
-          <Link href="#" className="hover:text-[#00FFFF] cursor-pointer">Access Ebook</Link>
-          <Link href="#" className="hover:text-[#00FFFF] cursor-pointer">Copilot+ PCs Benefits</Link>
-          <Link href="#" className="hover:text-[#00FFFF] cursor-pointer">Work Magic</Link>
-          <Link href="#" className="hover:text-[#00FFFF] cursor-pointer">Case Studies</Link>
+          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Windows 10 End of Support</Link>
+          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Access Ebook</Link>
+          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Copilot+ PCs Benefits</Link>
+          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Work Magic</Link>
+          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Case Studies</Link>
         </div>
       </nav>
     </div>
