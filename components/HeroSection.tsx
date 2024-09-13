@@ -32,7 +32,7 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 w-full z-10 h-24">
         <Navbar />
       </div>
-      <div className="absolute md:inset-10 z-10 mt-8 md:mt-12">
+      <div className="absolute md:inset-10 z-10 mt-8 md:mt-28">
       <Image src={"/laptop.png"} alt="laptop" width={1000} height={1000} className="md:hidden w-[90vw] mx-auto my-5" />
         <div className=" flex items-center">
           <div className="text-white p-6 max-w-2xl text-justify">
