@@ -15,6 +15,15 @@ import {
 } from "@/components/ui/drawer"
 import { X, ChevronRight } from "lucide-react"; // Import X icon from lucide-react
 
+const scrollPageBy = (pxValue: number) => {
+  setTimeout(() => {
+    window.scrollBy({
+      top: pxValue,
+      behavior: 'smooth'
+    });
+  }, 500);
+}
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false); // State for drawer open/close
 
@@ -84,26 +93,43 @@ const Navbar: React.FC = () => {
                 </DrawerClose>
               </DrawerHeader>
               <div className="px-5">
-                <Link href="#" className="flex justify-between"><span>Windows 10 End of Support </span> <span><ChevronRight /></span></Link>
+                  <Link href="#windows-10" onClick={() => {
+                    setIsOpen(false);
+                    scrollPageBy(0);
+                  }}  
+                    className="flex justify-between"><span>Windows 10 End of Support </span> <span><ChevronRight /></span></Link>
                 <div className="border-b border-[#E2E4E93D] my-4 mb-8"></div>
-                <Link href="#" className="flex justify-between"><span>Access Ebook </span> <span><ChevronRight /></span></Link>
+                  <Link href="#access-ebook"  onClick={() => {
+                    setIsOpen(false);
+                    scrollPageBy(950);
+                  }}   className="flex justify-between"><span>Access Ebook </span> <span><ChevronRight /></span></Link>
                 <div className="border-b border-[#E2E4E93D] my-4 mb-8"></div>
-                <Link href="#" className="flex justify-between"><span>Copilot+ PCs Benefits </span> <span><ChevronRight /></span></Link>
+                  <Link href="#copilot-pcs-benefits"  onClick={() => {
+                    setIsOpen(false);
+                    scrollPageBy(1400);
+                  }} className="flex justify-between"><span>Copilot+ PCs Benefits </span> <span><ChevronRight /></span></Link>
+
                 <div className="border-b border-[#E2E4E93D] my-4 mb-8"></div>
-                <Link href="#" className="flex justify-between"><span>Work Magic </span> <span><ChevronRight /></span></Link>
+                <Link href="#work-magic"  onClick={() => {
+                    setIsOpen(false);
+                    scrollPageBy(2850);
+                  }} className="flex justify-between"><span>Work Magic </span> <span><ChevronRight /></span></Link>
                 <div className="border-b border-[#E2E4E93D] my-4 mb-8"></div>
-                <Link href="#" className="flex justify-between"><span>Case Studies </span> <span><ChevronRight /></span></Link>
+                <Link href="#case-studies"  onClick={() => {
+                    setIsOpen(false);
+                    scrollPageBy(3750);
+                  }} className="flex justify-between"><span>Case Studies </span> <span><ChevronRight /></span></Link>
                 <div className="border-b border-[#E2E4E93D] my-4 mb-8"></div>
               </div>
             </DrawerContent>
           </Drawer>
         </div>
         <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} className="hidden md:flex text-white justify-center items-center gap-8 py-3">
-          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Windows 10 End of Support</Link>
-          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Access Ebook</Link>
-          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Copilot+ PCs Benefits</Link>
-          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Work Magic</Link>
-          <Link href="#" className="hover:text-[#4fe7fe] cursor-pointer">Case Studies</Link>
+          <Link href="#windows-10" className="hover:text-[#4fe7fe] cursor-pointer">Windows 10 End of Support</Link>
+          <Link href="#access-ebook" className="hover:text-[#4fe7fe] cursor-pointer">Access Ebook</Link>
+          <Link href="#copilot-pcs-benefits" className="hover:text-[#4fe7fe] cursor-pointer">Copilot+ PCs Benefits</Link>
+          <Link href="#work-magic" className="hover:text-[#4fe7fe] cursor-pointer">Work Magic</Link>
+          <Link href="#case-studies" className="hover:text-[#4fe7fe] cursor-pointer">Case Studies</Link>
         </div>
       </nav>
     </div>

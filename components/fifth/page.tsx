@@ -11,7 +11,7 @@ const Fifth: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#010b1a] relative w-full md:min-h-screen flex justify-center items-center overflow-hidden container mx-auto min-w-full pl-4 py-8 md:pl-6 lg:pl-8">
+    <div id="work-magic" className="bg-[#010b1a] relative w-full md:min-h-screen flex justify-center items-center overflow-hidden container mx-auto min-w-full pl-4 py-8 md:pl-6 lg:pl-8">
       <div className="flex flex-row justify-between items-center z-10 text-white w-full ">
         <div className="text-left w-full mb-8 lg:mb-0 lg:w-1/2">
           <span className="flex relative">

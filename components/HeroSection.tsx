@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative w-full h-[120vh] flex flex-col justify-center overflow-hidden m-0 p-0 bg-black">
+    <div id="#windows-10" className="relative w-full h-[120vh] flex flex-col justify-center overflow-hidden m-0 p-0 bg-black">
       <Image
         src="/hero_bg.png"
         alt="Background with Laptop"

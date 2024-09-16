@@ -12,7 +12,7 @@ const Second: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#04163b]  text-white py-8 md:py-16 px-2 md:px-6 container mx-auto min-w-full m-0 p-0">
+    <div id="access-ebook" className="bg-[#04163b]  text-white py-8 md:py-16 px-2 md:px-6 container mx-auto min-w-full m-0 p-0">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center space-x-0 md:space-x-24 justify-evenly space-y-1 md:space-y-2 ">
           <div className="w-full md:w-1/3 flex justify-center">

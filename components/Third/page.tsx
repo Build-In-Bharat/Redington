@@ -12,7 +12,7 @@ const Third: React.FC = () => {
   };
 
   return (
-      <div className="bg-[#010b1a] text-white pt-10 md:pt-14 font-sans container mx-auto min-w-full">
+      <div id="copilot-pcs-benefits" className="bg-[#010b1a] text-white pt-10 md:pt-14 font-sans container mx-auto min-w-full">
         <div className="max-w-screen md:mx-auto flex flex-col">
           <div className="mb-8 w-70 text-justify px-3 md:px-24 pb-5 md:pb-10 ">
             <div className="text-[#50aed8] font-bold text-xl md:text-3xl lg:text-4xl mb-2 md:mb-4 flex flex-col gap-1 md:gap-3">

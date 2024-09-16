@@ -11,7 +11,7 @@ const Last: React.FC = () => {
   };
 
   return (
-    <div className="bg-black ">
+    <div id="case-studies" className="bg-black ">
       <div className="relative w-full md:h-screen flex items-center overflow-hidden container mx-auto min-w-full bg-[#0a1929]">
         <Image
           src="/last_comp.png"
