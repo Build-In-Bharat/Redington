@@ -21,7 +21,7 @@ const Last: React.FC = () => {
           priority
           className="z-0"
         />
-        <div className="z-10 mt-48 ml-20 text-white">
+        <div className="z-10 mt-48 ml-[5%] text-white">
           <DialogForm
             isDialogOpen={isDialogOpen}
             toggleDialog={toggleDialog}

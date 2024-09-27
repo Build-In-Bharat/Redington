@@ -115,14 +115,18 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                 throw new Error("Form submission failed");
             } else {
                 console.log("Form submitted successfully");
+                let pdfUrl = "";
                 if (section === "AI-section") {
-                    await initiateDownload('/api/download/ai-copilot', 'AI Copilot.pdf');
+                    pdfUrl = "https://redingtoningram.s3.eu-north-1.amazonaws.com/wetransfer_probu_ebook_en-us_partner_redington-pdf_2024-09-26_1010/PROBU_ebook_EN-US_Partner_Redington.pdf";
                 } else if (section === "work-magic") {
-                    await initiateDownload('/api/download/work-magic', 'Work Magic.pdf');
+                    pdfUrl = "https://redingtoningram.s3.eu-north-1.amazonaws.com/wetransfer_probu_ebook_en-us_partner_redington-pdf_2024-09-26_1010/Win11_Pro_M365_WorkMagic_FY24_Q2_WW_EN_Infographic_WorkMagic_Redington.pdf";
                 } else if (section === "last-section") {
-                    await initiateDownload('/api/download/case-study', 'Case Study.pdf');
-                } else {
-                    console.log(" ")
+                    pdfUrl = "https://redingtoningram.s3.eu-north-1.amazonaws.com/wetransfer_probu_ebook_en-us_partner_redington-pdf_2024-09-26_1010/WINCOMPOM_CaseStudy_EN-US_Partner_Redington.pdf";
+                }
+
+                if (pdfUrl) {
+                    // Open PDF in a new tab
+                    window.open(pdfUrl, '_blank');
                 }
             }
 
@@ -141,29 +145,6 @@ export const DialogForm: React.FC<DialogFormProps> = ({
             toast.error("Form submission failed. Please try again."); // Show error toast
         } finally {
             setIsSubmitting(false);
-        }
-    };
-
-    const initiateDownload = async (url: string, filename: string) => {
-        setIsDownloading(true);
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Network response was not ok');
-            const blob = await response.blob();
-            const downloadUrl = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = downloadUrl;
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            window.URL.revokeObjectURL(downloadUrl);
-            document.body.removeChild(link);
-            console.log("Download initiated successfully");
-        } catch (error) {
-            console.error("Error initiating download:", error);
-            toast.error("Error initiating download. Please try again.");
-        } finally {
-            setIsDownloading(false);
         }
     };
 
@@ -382,18 +363,6 @@ export const DialogForm: React.FC<DialogFormProps> = ({
                             </button>
                         </form>
                     </ScrollArea>
-                </DialogContent>
-            </Dialog>
-
-            <Dialog open={isDownloading} onOpenChange={() => { }}>
-                <DialogContent className="bg-[#010B1A] text-white border-none rounded-xl">
-                    <DialogHeader>
-                        <DialogTitle>Downloading...</DialogTitle>
-                    </DialogHeader>
-                    <div className="flex items-center justify-center p-4">
-                        <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
-                        <p className="ml-2">Your download is in progress</p>
-                    </div>
                 </DialogContent>
             </Dialog>
         </>

@@ -42,8 +42,8 @@ const Fifth: React.FC = () => {
             <DialogForm
               isDialogOpen={isDialogOpen}
               toggleDialog={toggleDialog}
-              buttonText="Get Early Access"
-              dialogTitle="Get Early Access"
+              buttonText="Download Guide"
+              dialogTitle="Download Guide"
               buttonClassNames="py-4 px-4 md:py-5 md:px-5 lg:py-7 lg:px-6 mx-auto md:mx-0"
               section="work-magic"
             />
