@@ -25,8 +25,8 @@ const Last: React.FC = () => {
           <DialogForm
             isDialogOpen={isDialogOpen}
             toggleDialog={toggleDialog}
-            buttonText="Get Early Access"
-            dialogTitle="Get Early Access"
+            buttonText="Download Case Study"
+            dialogTitle="Download Case Study"
             buttonClassNames="hidden md:flex"
             section="last-section"
           />
