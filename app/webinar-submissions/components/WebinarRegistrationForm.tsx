@@ -1,5 +1,8 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   firstName: string;
@@ -13,6 +16,8 @@ interface FormData {
 }
 
 const WebinarRegistrationForm: React.FC = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -31,22 +36,40 @@ const WebinarRegistrationForm: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted", formData);
-    //add your logic here,to send data to the server
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
 
-    // Reset form data after submission
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      company: "",
-      title: "",
-      phone: "",
-      city: "",
-      leadFor: "redington",
-    });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}webinar-submissions/`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      router.push("/thankyou");
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        title: "",
+        phone: "",
+        city: "",
+        leadFor: "redington",
+      });
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      if (error.response.status === 400) {
+        toast.error("Email already exist");
+      } else {
+        toast.error(error.response.data.error);
+      }
+    }
   };
 
   return (
