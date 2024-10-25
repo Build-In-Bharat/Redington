@@ -5,8 +5,7 @@ import Image from "next/image";
 
 const WebinarRegistrationPage: React.FC = () => {
   return (
-    <div className="bg-gray-100 h-auto mx-auto grid lg:grid-cols-2 ">
-      {/*Summary section*/}
+    <div className="bg-gray-100 min-h-screen grid lg:grid-cols-2 ">
       <div className="p-10 sm:px-16">
         {/* logos */}
         <div className="flex justify-between items-center mb-12">
@@ -17,6 +16,7 @@ const WebinarRegistrationPage: React.FC = () => {
             height={10}
             className="w-[120px] sm:w-[160px]"
           />
+
           <Image
             src="/webinar-submissions/Windows_11_logo_horiz_blue.svg"
             alt="Windows 11"
@@ -37,7 +37,7 @@ const WebinarRegistrationPage: React.FC = () => {
                 stay secure.
               </span>
             </h1>
-            <p className="text-2xl my-6">
+            <p className="text-lg sm:text-4xl lg:text-2xl my-6">
               Join us to learn how outdated devices put your business at risk.
             </p>
             <p className="text-4xl font-light my-12">
@@ -47,7 +47,7 @@ const WebinarRegistrationPage: React.FC = () => {
 
           <>
             {/* date and time */}
-            <p className="text-purple-600 text-lg font-bold">
+            <p className="text-[#B447C0]  text-xs sm:text-lg lg:text-sm xl:text-lg font-bold">
               When:
               <span className="font-light">
                 28 November, 2024 | 16:00 PM-16:40 PM IST
@@ -55,7 +55,6 @@ const WebinarRegistrationPage: React.FC = () => {
             </p>
           </>
 
-          {/*Summary*/}
           <div className="my-6 sm:my-12">
             <p className="text-black ">
               Support for Windows 10 is ending on October 14, 2025, and outdated

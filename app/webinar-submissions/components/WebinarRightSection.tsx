@@ -3,7 +3,7 @@ import React from "react";
 
 const WebinarRightSection: React.FC = () => {
   return (
-    <div className="bg-gradient-to-b from-purple-400  via-purple-600 to-blue-600 min-h-[240vh] lg:min-h-screen  relative">
+    <div className="bg-gradient-to-b from-purple-400  via-purple-600 to-blue-600 min-h-screen relative">
       <div className="relative">
         <Image
           src="/webinar-submissions/DPS_Device_Swirls.png"
@@ -12,10 +12,9 @@ const WebinarRightSection: React.FC = () => {
           height={600}
           className="w-full"
         />
-
-        <div className="absolute z-2 sm:top-[80%]">
+        <div className="lg:absolute z-2 sm:top-[80%] ">
           {/* White Box */}
-          <div className="bg-white text-black p-6 mx-6 rounded-tl-[100px] rounded-br-[100px] relative z-10">
+          <div className="bg-white text-black p-6 mx-6 mb-16 rounded-tl-[100px] rounded-br-[100px] relative z-10">
             {/* Quote Section */}
             <div className="m-4 sm:m-8">
               <blockquote className="text-sm mb-4 text-black">
@@ -26,13 +25,14 @@ const WebinarRightSection: React.FC = () => {
                 IT team, that’s a good thing.”
               </blockquote>
               <p className="text-right text-gray-700">
-                - Madhusudhana Holla, General Manager
+                - Madhusudhana Holla, <br />
+                <span>General Manager</span>
               </p>
             </div>
 
             {/* Webinar Information */}
             <div>
-              <h2 className="text-xl font-semibold bg-gradient-to-r from-blue-900 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
+              <h2 className=" sm:text-2xl font-semibold bg-gradient-to-r from-blue-900 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
                 Windows 10 support is ending.
               </h2>
               <p className="mb-4 text-sm flex flex-col text-black">
@@ -48,7 +48,7 @@ const WebinarRightSection: React.FC = () => {
                 </span>
               </p>
 
-              <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-blue-900 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <h3 className=" sm:text-2xl font-semibold mb-4 bg-gradient-to-r from-blue-900 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 In this webinar, you will learn how to:
               </h3>
               <ul className="list-disc pl-6 mb-8 space-y-1 text-sm text-black">
@@ -66,31 +66,30 @@ const WebinarRightSection: React.FC = () => {
                 </li>
               </ul>
 
-              <h3 className="text-xl font-semibold mb-4 bg-gradient-to-r from-blue-900 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <h3 className=" sm:text-2xl font-semibold mb-4 bg-gradient-to-r from-blue-900 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Webinar agenda
               </h3>
               <div className="space-y-2 mb-8 text-sm text-gray-800">
                 <p className="flex gap-2">
-                  <span className="text-pink-500 font-bold">
+                  <span className=" text-[#B447C0] font-bold whitespace-nowrap">
                     4:00 - 4:30 PM:
                   </span>
-                  <span className="text-sm text-pink-500">
-                    Upgrading to Windows 11 - How outdated devices put your{" "}
-                    <br />
+                  <span className="text-sm text-[#B447C0]">
+                    Upgrading to Windows 11 - How outdated devices put your
                     business at risk
                   </span>
                 </p>
                 <p className="flex gap-2">
-                  <span className="text-pink-500 font-bold">
+                  <span className="text-[#B447C0] font-bold">
                     4:30 - 4:40 PM:
                   </span>
-                  <span className="text-sm text-pink-500">Q/A Session</span>
+                  <span className="text-sm text-[#B447C0]">Q/A Session</span>
                 </p>
                 <p className="flex gap-2">
-                  <span className="text-pink-500 font-bold">
+                  <span className="text-[#B447C0] font-bold">
                     4:40 - 4:45 PM:
                   </span>
-                  <span className="text-sm text-pink-500">Closing Note</span>
+                  <span className="text-sm text-[#B447C0]">Closing Note</span>
                 </p>
               </div>
 
@@ -117,7 +116,7 @@ const WebinarRightSection: React.FC = () => {
               <Image
                 src="/webinar-submissions/swirl-Frame.png"
                 alt="swirl-2"
-                className="w-[560px] object-cover"
+                className="w-full sm:w-[560px] z-50 "
                 width={600}
                 height={100}
               />
