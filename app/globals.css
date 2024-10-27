@@ -2,8 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add font import at the top */
+@font-face {
+  font-family: 'Segoe UI';
+  src: url('/public/fonts/segoe-ui.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Segoe UI', sans-serif;
+}
+
 * {
   scroll-behavior: smooth;
+}
+
+
+body {
+  /* @apply bg-background text-foreground; */
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  overflow: auto;
 }
 
 
@@ -15,7 +34,6 @@
 
 @layer base {
   * {
-    @apply border-border;
     margin: 0;
     /* Ensure no default margin */
     padding: 0;
@@ -23,7 +41,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
     font-family: "Segoe UI", sans-serif;
     overflow: auto;
     /* Allow scrolling */

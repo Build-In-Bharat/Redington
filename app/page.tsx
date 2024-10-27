@@ -13,7 +13,7 @@ import Footer from "@/components/new-components/Footer/page"
 
 export default function Home() {
   return (
-    <main className="bg-background overflow-x-hidden" vaul-drawer-wrapper="">
+    <main className="bg-background overflow-x-hidden vaul-drawer-wrapper=" >
       <Navbar />
       <First />
       <Second />
